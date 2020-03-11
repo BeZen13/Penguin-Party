@@ -72,7 +72,7 @@ function waddle(){
     if(random <= .25){
         predatorEncounter()
     }else{
-        console.log('You did not encounter a predator, keep walking ')
+        console.log('You did not encounter a predator, keep waddling ')
     }
 }
 
