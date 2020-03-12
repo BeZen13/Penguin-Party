@@ -55,6 +55,11 @@ const polarbear = new Predator('Polar Bear', 300, 10)
 
 const predators = [sealion, poacher, polarbear]
 
+console.log("Upon a barren wasteland of Ice and Snow you stumble out into waking existence.")
+console.log("You are but a tiny spec of black in this white winter desert! You hear the wind rumble as you recognize the futility of your existence")
+console.log("You will either survive or perish. The perril that awaits you is near, and the forboding elements are a constant reminder!\n") 
+
+
 while(isAlive && !hasWon){
     const action = readline.keyIn('Would you like to waddle [w], print inventory [p], or quit[q]? ', { limit: 'wqp' })
         if(action === 'w'){
