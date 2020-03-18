@@ -98,6 +98,14 @@ function SkinLion(){
         }
 }
 
+function skinBear(){
+    console.log("You now have the ability to skin the Polar Bear")
+    const action = readline.keyIn(`Would you like to skin the Polar Bear? y or n? `, { limit: 'yn' })
+        if(action === 'y'){
+            console.log("You begin to skin the Polar Bear.")
+        }
+}
+
 function predatorEncounter(){
     let predator = predatorSelect()
     console.log(`You've encountered a ${predator.name}`)
