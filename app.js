@@ -87,6 +87,14 @@ function SkinLion(){
         if(action === 'y'){
             console.log("You begin to skin the Sea Lion. The smell is strong, but you notice there is a lot of use for this animal.")
             const equip = readline.keyIn('Would you like to equip the skin and be warmer? y or n? ', { limit: 'yn' })
+                if(equip === 'y'){
+                    penguin.hp = penguin.hp + 10;
+                    console.log(`You gained some health from the Sea Lion Skin! Your new HP is ${penguin.hp}`)
+                }else{
+                    waddle()
+                }
+        }else{
+            waddle()
         }
 }
 
@@ -125,7 +133,7 @@ function fight(predator){
     if(penguin.hp > 0){
         console.log(`Congratulations ${penguin.name}, you defeated ${predator.name}`)
         if(`${predator.name} = 'Sea Lion`){
-            
+            SkinLion()
         }
         let index = predators.findIndex((myPredator) => { myPredator.name === predator.name })
         predators.splice(index, 1)
