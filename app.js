@@ -83,14 +83,15 @@ function waddle(){
 
 function SkinLion(){
     console.log("You now have the ability to skin the Sea Lion.")
-    const action = readline.keyIn('Would you like to skin the Sea Lion? y or n ? ', { limit: 'yn' })
-        if(action === 'y'){
+    const actionseal = readline.keyIn('Would you like to skin the Sea Lion? y or n ? ', { limit: 'yn' })
+        if(actionseal === 'y'){
             console.log("You begin to skin the Sea Lion. The smell is strong, but you notice there is a lot of use for this animal.")
-            const equip = readline.keyIn('Would you like to equip the skin and be warmer? y or n? ', { limit: 'yn' })
-                if(equip === 'y'){
+            const equipseal = readline.keyIn('Would you like to equip the skin and be warmer? y or n? ', { limit: 'yn' })
+                if(equipseal === 'y'){
                     penguin.hp = penguin.hp + 10;
                     console.log(`You gained some health from the Sea Lion Skin! Your new HP is ${penguin.hp}`)
                 }else{
+                    console.log('You have decided to pass up a great opportunity to utilize the warmth of a skin!')
                     waddle()
                 }
         }else{
@@ -98,13 +99,40 @@ function SkinLion(){
         }
 }
 
-function skinBear(){
+function SkinBear(){
     console.log("You now have the ability to skin the Polar Bear")
-    const action = readline.keyIn(`Would you like to skin the Polar Bear? y or n? `, { limit: 'yn' })
-        if(action === 'y'){
-            console.log("You begin to skin the Polar Bear.")
+    const actionbear = readline.keyIn(`Would you like to skin the Polar Bear? y or n? `, { limit: 'yn' })
+        if(actionbear === 'y'){
+            console.log("You begin to skin the Polar Bear. The smell is strong but you notice there is a lot ofuse for this amimal!")
+            const equipbear = readline.keyIn('Would you like to equip the skin and be warmer? y or n?', { limit: 'yn' })
+            if(equipbear === 'y'){
+                penguin.hp = penguin.hp + 50;
+                console.log(`You gained some health from the Sea Lion Skin! Your new HP is ${penguin.hp}`)
+            }
+        }else{
+            console.log('You have decided to pass up a great opportunity to utilize the warmth of a skin!')
+            waddle()
         }
 }
+
+function SkinPoacher(){
+    console.log("You now have the ability to skin the Poacher.")
+    const actionpoacher = readline.keyIn('Would you like to skin the Poacher? y or n ? ', { limit: 'yn' })
+        if(actionpoacher === 'y'){
+            console.log("You begin to skin the Poacher. The smell is strong, but you notice there is a lot of use for this animal.")
+            const equippoacher = readline.keyIn('Would you like to equip the skin and be warmer? y or n? ', { limit: 'yn' })
+                if(equippoacher === 'y'){
+                    penguin.hp = penguin.hp + 100;
+                    console.log(`You gained some health from the Poacher Skin! Your new HP is ${penguin.hp}`)
+                }else{
+                    console.log('You have decided to pass up a great opportunity to utilize the warmth of a skin!')
+                    waddle()
+                }
+        }else{
+            waddle()
+        }
+}
+
 
 function predatorEncounter(){
     let predator = predatorSelect()
@@ -140,9 +168,16 @@ function fight(predator){
     }
     if(penguin.hp > 0){
         console.log(`Congratulations ${penguin.name}, you defeated ${predator.name}`)
-        if(`${predator.name} = 'Sea Lion`){
+        if(`${predator.name} = 'Sea Lion'`){
             SkinLion()
         }
+        else if(`${predator.name} = 'Polar Bear'`){
+            SkinBear()
+        }
+        else if(`${predator.name} = 'Poacher'`){
+            SkinPoacher()
+        }
+    }
         let index = predators.findIndex((myPredator) => { myPredator.name === predator.name })
         predators.splice(index, 1)
         if(predators.length === 0){
