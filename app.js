@@ -94,7 +94,8 @@ function SkinLion(){
                     console.log('You have decided to pass up a great opportunity to utilize the warmth of a skin!')
                     waddle()
                 }
-        }else{
+        }
+        else{
             waddle()
         }
 }
@@ -109,7 +110,8 @@ function SkinBear(){
                 penguin.hp = penguin.hp + 50;
                 console.log(`You gained some health from the Sea Lion Skin! Your new HP is ${penguin.hp}`)
             }
-        }else{
+        }
+        else{
             console.log('You have decided to pass up a great opportunity to utilize the warmth of a skin!')
             waddle()
         }
@@ -128,7 +130,8 @@ function SkinPoacher(){
                     console.log('You have decided to pass up a great opportunity to utilize the warmth of a skin!')
                     waddle()
                 }
-        }else{
+        }
+        else{
             waddle()
         }
 }
@@ -217,7 +220,7 @@ function fight(predator){
             `)
         }
         
-    }
+    
     else{
         isAlive = false
         console.log(`
@@ -240,8 +243,8 @@ function fight(predator){
   @@@@                         @@@@   
 
         `)
-    }
-}
+}}
+
 
 function playDead(){
     console.log("You've successfully thwarted your Predator, They believe you're dead! ")
