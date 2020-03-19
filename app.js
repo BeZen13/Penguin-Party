@@ -167,14 +167,14 @@ function fight(predator){
     
     if(penguin.hp > 0){
         console.log(`Congratulations ${penguin.name}, you defeated ${predator.name}`)
-        if(`${predator.name} === 'Sea Lion'`){
+        if(predator.name === sealion){
             SkinLion()
         }
-        else if(`${predator.name} === 'Polar Bear'`){
-            SkinBear()
-        }
-        else if(`${predator.name} === 'Poacher'`){
+        else if(predator.name === poacher){
             SkinPoacher()
+        }
+        else if(predator.name === polarbear){
+            SkinBear()
         }
     }}
 }    
